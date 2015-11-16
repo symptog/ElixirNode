@@ -1,9 +1,9 @@
 # ElixirNode
 
-Running Javascript in Elixir using *node.js*. As I think, this currently not really efficient.
+Running Javascript in Elixir using *node.js*. As I think, this is currently not really efficient.
 The Javascript String is currently written into a file and then run by node. So you need `console.log(result)` to get the result back in to elixir.
 
-For examples please have a look at `test/`.
+Please have a look at `test/` for some examples.
 
 ## Installation
 
