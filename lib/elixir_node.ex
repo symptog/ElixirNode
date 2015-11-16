@@ -13,7 +13,7 @@ defmodule ElixirNode do
     @spec exec(binary) :: {:ok, binary}
     @spec exec(binary) :: {:error, {integer, binary}}
     def exec(js) do
-        filename = System.tmp_dir() <> "/" <> "_elixirnode_" <> Integer.to_string(:os.system_time) <> ".js"
+        filename = Path.join(System.tmp_dir(), "_elixirnode_" <> Integer.to_string(:os.system_time) <> ".js")
         filename |> File.write(js)
         {result, exit_status} = System.cmd("node", [filename])
         File.rm(filename)
@@ -25,11 +25,11 @@ defmodule ElixirNode do
 
     def render_template(template, assigns, node_modules \\ false)
     def render_template(template, assigns, node_modules) when node_modules and is_binary(template) and is_list(assigns) do
-        EEx.eval_file("node_templates" <> "/" <> template, assigns: [ {:node_path, @node_path} | assigns]) |> exec()
+        EEx.eval_file(Path.join("node_templates", template), assigns: [ {:node_path, @node_path} | assigns]) |> exec()
     end
 
     def render_template(template, assigns, node_modules) when not node_modules and is_binary(template) and is_list(assigns) do
-        EEx.eval_file("node_templates" <> "/" <> template, assigns: assigns) |> exec()
+        EEx.eval_file(Path.join("node_templates", template), assigns: assigns) |> exec()
     end
 
     def render_template(_template, _assigns, _node_path) do
