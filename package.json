@@ -1,0 +1,19 @@
+{
+  "name": "elixir_node",
+  "version": "0.0.1",
+  "description": "ElixirNode",
+  "main": "",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "react": "^0.14.2",
+    "react-dom": "^0.14.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "MIT"
+}
