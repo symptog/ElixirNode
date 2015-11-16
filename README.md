@@ -25,4 +25,4 @@ Please have a look at `test/` for some examples.
           react_template: "react_template.js",
           node_path: System.cwd <> "/node_modules"
 
-  4. Run `npm install`:
+  4. Run `npm install`
