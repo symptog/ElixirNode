@@ -10,7 +10,7 @@ Please have a look at `test/` for some examples.
   1. Add elixir_node to your list of dependencies in `mix.exs`:
 
         def deps do
-          [{:elixir_node, "~> 0.0.1"}]
+          [{:elixir_node, github: "symptog/ElixirNode"}]
         end
 
   2. Ensure elixir_node is started before your application:
