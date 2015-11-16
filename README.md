@@ -1,10 +1,11 @@
 # ElixirNode
 
-**TODO: Add description**
+Running Javascript in Elixir using *node.js*. As I think, this currently not really efficient.
+The Javascript String is currently written into a file and then run by node. So you need `console.log(result)` to get the result back in to elixir.
+
+For examples please have a look at `test/`.
 
 ## Installation
-
-If [available in Hex](https://hex.pm/docs/publish), the package can be installed as:
 
   1. Add elixir_node to your list of dependencies in `mix.exs`:
 
@@ -17,3 +18,11 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
         def application do
           [applications: [:elixir_node]]
         end
+
+  3. Setup your vars in `config/config.exs`:
+
+        config :elixir_node,
+          react_template: "react_template.js",
+          node_path: System.cwd <> "/node_modules"
+
+  4. Run `npm install`:
